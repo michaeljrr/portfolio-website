@@ -2,7 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, } from 'react-icons/fa';
 import { CiMail } from "react-icons/ci";
-import { TypingEffect, MultiTypingEffect, AnimatedTyping } from "@/animations/typing";
+//import { TypingEffect, MultiTypingEffect, AnimatedTyping } from "@/animations/typing";
 
 export default function HomePage() {
   return (
@@ -27,7 +27,7 @@ export default function HomePage() {
             />
           </div>
           
-          <h2 className="text-2xl font-semibold mb-4 text-black text-center">Hello! I'm Michael, 
+          <h2 className="text-2xl font-semibold mb-4 text-black text-center">Hello! I&apos;m Michael, 
           a Computer Science undergraduate <br/> 
           with a passion for <span className="text-blue-800">full-stack development</span> and <span className="text-blue-800">cybersecurity</span>.
           </h2>

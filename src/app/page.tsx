@@ -1,6 +1,4 @@
 import React from "react";
-import { AppBar, Toolbar, Button } from "@mui/material";
-import Link from "next/link";
 
 import Header from "@/components/Header";
 import HomePage from "@/components/1_Home";
