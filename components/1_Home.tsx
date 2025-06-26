@@ -6,9 +6,8 @@ import { CiMail } from "react-icons/ci";
 
 export default function HomePage() {
   return (
-    <section  className="pt-20 p-8 h-auto relative">
+    <section id="home" className="pt-20 p-8 h-auto relative">
         <Image
-          id="home"
           src="/mountain.jpg"
           alt="Background Photo"
           width={1920}

@@ -2,11 +2,15 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaReact, FaNodeJs, FaPython, FaJsSquare, FaGithub, FaExternalLinkAlt, FaJava } from 'react-icons/fa';
-import { SiNextdotjs, SiTailwindcss, SiMongodb, SiVercel } from 'react-icons/si';
+import { FaReact, FaNodeJs, FaPython, FaJsSquare, FaGithub, FaJava } from 'react-icons/fa';
+import { SiNextdotjs, SiTailwindcss, SiMongodb, SiVercel, SiArduino } from 'react-icons/si';
 import { FcAndroidOs } from "react-icons/fc";
 import { RiTailwindCssFill } from "react-icons/ri";
 import { BiLogoTypescript } from "react-icons/bi";
+import { BsMotherboardFill } from "react-icons/bs";
+import { GiStandingPotion } from "react-icons/gi";
+import { FaCirclePlay } from "react-icons/fa6";
+import { TbBrandCpp } from "react-icons/tb";
 import type { ReactElement } from 'react';
 import React, { useEffect, useRef, useState } from 'react';
 
@@ -52,7 +56,11 @@ export function ProjectCard({
       'Java': <FaJava className="text-blue-600" />,
       'Android':<FcAndroidOs />,
       'TailwindCss':<RiTailwindCssFill className='text-blue-600'/>,
-      'Typescript':<BiLogoTypescript className='text-blue-400'/>
+      'Typescript':<BiLogoTypescript className='text-blue-400'/>,
+      'FPGA':<BsMotherboardFill />,
+      'Lucid':<GiStandingPotion className='text-yellow-400'/>,
+      'Arduino':<SiArduino />,
+      'C++':<TbBrandCpp className='text-blue-400'/>
     };
     return techIcons[tech] || <span className="text-gray-500">{tech}</span>;
   };
@@ -96,7 +104,7 @@ useEffect(() => {
     
     <div ref={cardRef} className={`
         bg-white rounded-lg shadow-lg overflow-hidden mb-8
-        transition-all duration-800 ease-out transform-gpu origin-center
+        transition-all duration-800 ease-out transform-gpu origin-center border-1 border-gray-300
         ${isVisible 
           ? 'scale-100 opacity-100' 
           : 'scale-80 opacity-60'
@@ -111,7 +119,7 @@ useEffect(() => {
             {title}
           </h3>
           
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-gray-600 mb-4 leading-relaxed ">
             {description}
           </p>
           
@@ -147,10 +155,10 @@ useEffect(() => {
                 href={demoUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex hover:scale-110 items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
+                className="flex hover:scale-110 items-center gap-2 bg-red-500 hover:bg-red-700 text-white px-4 py-2 rounded-lg transition-colors duration-200"
               >
-                <FaExternalLinkAlt />
-                <span>Live Demo</span>
+                <FaCirclePlay />
+                <span>Demo</span>
               </Link>
             )}
           </div>
