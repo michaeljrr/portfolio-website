@@ -9,6 +9,7 @@ import TimelineContent from '@mui/lab/TimelineContent';
 import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Typography from '@mui/material/Typography';
+import Image from 'next/image';
 
 export default function Experience() {
   return (
@@ -33,7 +34,7 @@ export default function Experience() {
                 <TimelineConnector sx={{ height: 0 }} />
 
                 <TimelineDot sx={{ p: 0, width: 70, height: 70, backgroundColor: 'transparent',}}>
-                    <img
+                    <Image
                         src="/sutd.png"
                         alt="My Logo"
                         className="w-full h-full rounded-full object-cover scale-95 "
@@ -72,7 +73,7 @@ export default function Experience() {
                 <TimelineConnector sx={{ height: 0 }} />
 
                 <TimelineDot sx={{ p: 0, width: 70, height: 70, backgroundColor: 'transparent',}}>
-                    <img
+                    <Image
                         src="/soar.png"
                         alt="My Logo"
                         className="w-full h-full rounded-full object-cover scale-95 "
@@ -90,8 +91,8 @@ export default function Experience() {
                     Software Team Lead
                 </Typography>
                 <Typography sx={{ marginRight: '280px', marginTop: '10px' }}>
-                    Created a custom C++ library incorporating PID control, odometry, and VEX libraries, enhancing our club robots' functionality 
-                    and versatility </Typography>
+                    Created a custom C++ library incorporating PID control, odometry, and VEX libraries, enhancing the functionality 
+                    and versatility of our club robots</Typography>
             </TimelineContent>
 
         </TimelineItem>
