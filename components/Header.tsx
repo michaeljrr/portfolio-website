@@ -13,6 +13,9 @@ export default function Header() {
                 <Link href="#about" className="hover:underline">
                 About
                 </Link>
+                <Link href="#experience" className="hover:underline">
+                Experience
+                </Link>
                 <Link href="#projects" className="hover:underline">
                 Projects
                 </Link>
