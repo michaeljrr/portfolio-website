@@ -31,13 +31,15 @@ export default function Experience() {
 
             <TimelineSeparator>
 
-                <TimelineConnector sx={{ height: 0 }} />
+                <TimelineConnector sx={{ height: 20 }} />
 
                 <TimelineDot sx={{ p: 0, width: 70, height: 70, backgroundColor: 'transparent',}}>
                     <Image
                         src="/sutd.png"
                         alt="My Logo"
-                        className="w-full h-full rounded-full object-cover scale-95 "
+                        width={500}
+                        height={500}
+                        className="w-full h-full rounded-full object-cover scale-95"
                     />
                 </TimelineDot>
 
@@ -70,12 +72,14 @@ export default function Experience() {
 
             <TimelineSeparator>
 
-                <TimelineConnector sx={{ height: 0 }} />
+                <TimelineConnector sx={{ height: 20 }} />
 
                 <TimelineDot sx={{ p: 0, width: 70, height: 70, backgroundColor: 'transparent',}}>
                     <Image
                         src="/soar.png"
                         alt="My Logo"
+                        width={500}
+                        height={500}
                         className="w-full h-full rounded-full object-cover scale-95 "
                     />
                 </TimelineDot>

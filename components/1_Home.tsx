@@ -37,7 +37,7 @@ export default function HomePage() {
 
           {/* Contact Me Button */}
             <Link 
-              href="/contact" 
+              href="#contact" 
               className="flex items-center gap-2 bg-black hover text-white px-6 py-3 rounded-lg font-semibold hover:scale-110"
             >
               <CiMail className='w-6 h-6 '/>

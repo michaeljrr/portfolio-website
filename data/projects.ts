@@ -20,7 +20,7 @@ export const projects: Project[] = [
 
   {
     title: "Dab It!",
-    description: "Engineered an interactive rhythm game inspired by Piano Tiles using an FPGA board, programmed in Lucid via Alchitry Labs. Integrated LEDs, 7-segment displays and buttons to capture user input with real-time responsiveness ",
+    description: "Engineered an interactive rhythm game inspired by Piano Tiles using an FPGA board, programmed in Lucid via Alchitry Labs. Integrated LEDs, 7-segment displays and buttons to capture user input with real-time responsiveness.",
     image: "/dabit.png",
     technologies: ["Lucid", "FPGA"],
     githubUrl: "https://github.com/michaeljrr/2025-Term-4/tree/main/50-002",
@@ -28,7 +28,7 @@ export const projects: Project[] = [
   },
   {
     title: "Verdiance",
-    description: "An interactive light-emitting prototype placed in the gym, gamifying the gym experience to increase user interactions and interest for a more active and interactive gym environment. Constructed the electronic systems with Arduino, integrating card scanners and creating multiple LED animations  ",
+    description: "An interactive light-emitting prototype placed in the gym, gamifying the gym experience to increase user interactions and interest for a more active and interactive gym environment. Constructed the electronic systems with Arduino, integrating card scanners and creating multiple LED animations.",
     image: "/verdiance.png",
     technologies: ["Arduino", "C++"],
     demoUrl:"https://youtu.be/uzAOjA5p5PY"
@@ -36,7 +36,7 @@ export const projects: Project[] = [
 
   {
     title: "Python Chess Game",
-    description: "Developed a Python chess game playable via the command line, supporting algebraic notation input and dynamic board visualisation with Matplotlib",
+    description: "Developed a Python chess game playable via the command line, supporting algebraic notation input and dynamic board visualisation with Matplotlib.",
     image: "/python-chess.png",
     technologies: ["Python"],
     githubUrl: "https://github.com/michaeljrr/python-chess",
