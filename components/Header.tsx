@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useState } from 'react';
 import { HiMenu, HiX } from 'react-icons/hi'; // Hamburger & close icons
+import { motion } from 'framer-motion';
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -10,9 +11,20 @@ export default function Header() {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white/80 text-black backdrop-blur-md shadow-md">
       <div className="flex justify-between items-center max-w-7xl mx-auto px-4 py-4">
-        <h1 className="text-lg md:text-xl font-bold">Emata Michael Jr Rasco</h1>
+        <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
+        <Link href="#home" className="text-lg md:text-xl font-bold">Emata Michael Jr Rasco</Link>
+        </motion.div>
 
         {/* Desktop Nav */}
+        <motion.div
+            initial={{ opacity: 0, y: -10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+          >
         <nav className="hidden md:flex gap-8">
           <Link href="#home" className="hover:underline">Home</Link>
           <Link href="#about" className="hover:underline">About</Link>
@@ -20,6 +32,8 @@ export default function Header() {
           <Link href="#projects" className="hover:underline">Projects</Link>
           <Link href="#contact" className="hover:underline">Contact</Link>
         </nav>
+
+        </motion.div>
 
         {/* Mobile Hamburger */}
         <button

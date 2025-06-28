@@ -41,11 +41,11 @@ export const TypingEffect = ({
   }, [currentIndex, text, speed, delay, isComplete, onComplete]);
 
   return (
-    <span className={`inline-block ${className}`}>
+    <span className={`inline ${className}`}>
       {displayedText}
       {showCursor && (
         <motion.span
-          className={`inline-block ml-1 ${cursorClassName}`}
+          className={`inline ml-1 ${cursorClassName}`}
           animate={{ opacity: [1, 0] }}
           transition={{
             duration: 0.5,
@@ -204,7 +204,7 @@ export const AnimatedTyping = ({
 };
 
 // Example usage component
-const TypingEffectDemo = () => {
+export const TypingEffectDemo = () => {
   const [showSecondText, setShowSecondText] = useState(false);
 
   return (

@@ -69,35 +69,35 @@ export function ProjectCard({
   const cardRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
-useEffect(() => {
-  const currentCard = cardRef.current;  // Save reference here
+  useEffect(() => {
+    const currentCard = cardRef.current;  // Save reference here
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-        } else {
-          setIsVisible(false);
-        }
-      });
-    },
-    {
-      threshold: 0.2,
-      rootMargin: '80px 0px',
-    }
-  );
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible(true);
+          } else {
+            setIsVisible(false);
+          }
+        });
+      },
+      {
+        threshold: 0.2,
+        rootMargin: '80px 0px',
+      }
+    );
 
-  if (currentCard) {
-    observer.observe(currentCard);
-  }
-
-  return () => {
     if (currentCard) {
-      observer.unobserve(currentCard);
+      observer.observe(currentCard);
     }
-  };
-}, []);
+
+    return () => {
+      if (currentCard) {
+        observer.unobserve(currentCard);
+      }
+    };
+  }, []);
 
 
   return (

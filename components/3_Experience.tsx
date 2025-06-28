@@ -10,7 +10,7 @@ import TimelineDot from '@mui/lab/TimelineDot';
 import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
-
+import { motion } from 'framer-motion';
 
 export default function Experience() {
   return (
@@ -19,94 +19,145 @@ export default function Experience() {
         My Experience
       </h2>
 
-      <Timeline position={'right'}>
+      <Timeline position="right">
+        {/* === Timeline Item 1 === */}
         <TimelineItem>
-          <TimelineOppositeContent sx={{ my: 'auto' }} align="right" variant="body2" color="text.secondary">
-            June 2025 - Present
+          <TimelineOppositeContent
+            sx={{ my: 'auto' }}
+            align="right"
+            variant="body2"
+            color="text.secondary"
+          >
+            <motion.span
+              style={{ display: 'inline-block' }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              June 2025 - Present
+            </motion.span>
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineConnector sx={{ 
-              flexGrow: 1, 
-              minHeight: '2rem', // Use rem instead of px for better scaling
-              height: 'auto'
-            }}/>
-            <TimelineDot sx={{ 
-              p: 0, 
-              width: 70, 
-              height: 70, 
-              backgroundColor: 'transparent',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <Image 
-                src="/sutd.png" 
-                alt="SUTD" 
-                width={66} // Slightly smaller to avoid scaling issues
-                height={66} 
-                className="rounded-full object-cover" 
-                style={{ width: '66px', height: '66px' }} // Explicit sizing
-              />
+            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
+
+            <TimelineDot
+              sx={{
+                p: 0,
+                width: 70,
+                height: 70,
+                backgroundColor: 'transparent',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <Image
+                  src="/sutd.png"
+                  alt="SUTD"
+                  width={66}
+                  height={66}
+                  className="rounded-full object-cover"
+                />
+              </motion.div>
             </TimelineDot>
-            <TimelineConnector sx={{ 
-              flexGrow: 1, 
-              minHeight: '2rem',
-              height: 'auto'
-            }}/>
+
+            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
           </TimelineSeparator>
 
           <TimelineContent sx={{ py: 2, px: 2 }}>
-            <Typography sx={{ fontWeight: 'bold' }}>SUTD Part-Time Work Scheme</Typography>
-            <Typography sx={{ fontSize: '15px', color: 'gray' }}>Software Developer</Typography>
-            <Typography sx={{ mt: 1, maxWidth: '400px' }}>
-              Designing and developing a web application that automates IRB draft generation for students and research professionals.
-            </Typography>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            >
+              <Typography sx={{ fontWeight: 'bold' }}>
+                SUTD Part-Time Work Scheme
+              </Typography>
+              <Typography sx={{ fontSize: '15px', color: 'gray' }}>
+                Software Developer
+              </Typography>
+              <Typography sx={{ mt: 1, maxWidth: '400px' }}>
+                Designing and developing a web application that automates IRB
+                draft generation for students and research professionals.
+              </Typography>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
 
+        {/* === Timeline Item 2 === */}
         <TimelineItem>
-          <TimelineOppositeContent sx={{ my: 'auto' }} align="right" variant="body2" color="text.secondary">
-            Apr 2023 - Nov 2023
+          <TimelineOppositeContent
+            sx={{ my: 'auto' }}
+            align="right"
+            variant="body2"
+            color="text.secondary"
+          >
+            <motion.span
+              style={{ display: 'inline-block' }}
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3 }}
+            >
+              Apr 2023 - Nov 2023
+            </motion.span>
           </TimelineOppositeContent>
 
           <TimelineSeparator>
-            <TimelineConnector sx={{ 
-              flexGrow: 1, 
-              minHeight: '2rem',
-              height: 'auto'
-            }}/>  
-            <TimelineDot sx={{ 
-              p: 0, 
-              width: 70, 
-              height: 70, 
-              backgroundColor: 'transparent',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center'
-            }}>
-              <Image 
-                src="/soar.png" 
-                alt="SCRT" 
-                width={66} 
-                height={66} 
-                className="rounded-full object-cover" 
-                style={{ width: '66px', height: '66px' }}
-              />
+            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
+
+            <TimelineDot
+              sx={{
+                p: 0,
+                width: 70,
+                height: 70,
+                backgroundColor: 'transparent',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+              }}
+            >
+              <motion.div
+                initial={{ scale: 0 }}
+                whileInView={{ scale: 1 }}
+                transition={{ duration: 0.3, ease: 'easeOut' }}
+              >
+                <Image
+                  src="/soar.png"
+                  alt="SCRT"
+                  width={66}
+                  height={66}
+                  className="rounded-full object-cover"
+                />
+              </motion.div>
             </TimelineDot>
-            <TimelineConnector sx={{ 
-              flexGrow: 1, 
-              minHeight: '2rem',
-              height: 'auto'
-            }}/>
+
+            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
           </TimelineSeparator>
 
           <TimelineContent sx={{ py: 2, px: 2 }}>
-            <Typography sx={{ fontWeight: 'bold' }}>SCRT (SUTD Competitive Robotics Team)</Typography>
-            <Typography sx={{ fontSize: '15px', color: 'gray' }}>Software Team Lead</Typography>
-            <Typography sx={{ mt: 1, maxWidth: '350px' }}>
-              Created a custom C++ library incorporating PID control, odometry, and VEX libraries, enhancing the functionality and versatility of our club robots.
-            </Typography>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.3, delay: 0.2 }}
+            >
+              <Typography sx={{ fontWeight: 'bold' }}>
+                SCRT (SUTD Competitive Robotics Team)
+              </Typography>
+              <Typography sx={{ fontSize: '15px', color: 'gray' }}>
+                Software Team Lead
+              </Typography>
+              <Typography sx={{ mt: 1, maxWidth: '400px' }}>
+                Created a custom C++ library incorporating PID control, odometry,
+                and VEX libraries, enhancing the functionality and versatility of
+                our club robots.
+              </Typography>
+            </motion.div>
           </TimelineContent>
         </TimelineItem>
       </Timeline>
