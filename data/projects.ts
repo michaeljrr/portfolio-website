@@ -6,7 +6,7 @@ export const projects: Project[] = [
     description: "Developed a responsive personal portfolio website to showcase projects and skills with a clean, modern design.",
     image: "/portfolio.png",
     technologies: ["React", "Next.js", "TailwindCss", "Typescript", "Vercel"],
-    githubUrl: "https://github.com/michaeljrr/2025-Term-4",
+    githubUrl: "https://github.com/michaeljrr/portfolio-website",
   },
 
   {

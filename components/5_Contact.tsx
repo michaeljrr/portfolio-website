@@ -3,6 +3,8 @@ import { CiMail } from "react-icons/ci";
 import { MdOutlineLocalPhone } from "react-icons/md";
 import { FaGithub, FaLinkedin, } from 'react-icons/fa';
 
+
+
 export default function Contact(){
     return(
         <section id='contact' className="flex-col py-16 px-4 bg-gray-50">

@@ -89,7 +89,12 @@ export default function ContactForm() {
         Send Message
       </button>
 
-      {status && <p className="text-sm text-green-600">{status}</p>}
+      {status ? (
+        <p className="text-sm text-green-600">{status}</p>
+      ) : (
+        <p style={{ visibility: 'hidden', height: 0, margin: 0, padding: 0 }}>placeholder</p>
+      )}
+
     </form>
   );
 }
