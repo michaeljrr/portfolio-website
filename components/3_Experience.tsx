@@ -11,6 +11,7 @@ import TimelineOppositeContent from '@mui/lab/TimelineOppositeContent';
 import Typography from '@mui/material/Typography';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
+import experiences, { type Experience } from '@/data/experiences';
 
 export default function Experience() {
   return (
@@ -21,76 +22,75 @@ export default function Experience() {
 
       <Timeline position="right">
 
-        {/* === Timeline Item 2 === */}
-        <TimelineItem>
-          <TimelineOppositeContent
-            sx={{ my: 'auto' }}
-            align="right"
-            variant="body2"
-            color="text.secondary"
-          >
-            <motion.span
-              style={{ display: 'inline-block' }}
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3 }}
+        {experiences.map((experience: Experience, index: number) => (
+          <TimelineItem key={index}>
+            <TimelineOppositeContent
+              sx={{ my: 'auto' }}
+              align="right"
+              variant="body2"
+              color="text.secondary"
             >
-              Apr 2023 - Nov 2023
-            </motion.span>
-          </TimelineOppositeContent>
-
-          <TimelineSeparator>
-            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
-
-            <TimelineDot
-              sx={{
-                p: 0,
-                width: 70,
-                height: 70,
-                backgroundColor: 'transparent',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-              }}
-            >
-              <motion.div
-                initial={{ scale: 0 }}
-                whileInView={{ scale: 1 }}
-                transition={{ duration: 0.3, ease: 'easeOut' }}
+              <motion.span
+                style={{ display: 'inline-block' }}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3 }}
               >
-                <Image
-                  src="/soar.png"
-                  alt="SCRT"
-                  width={66}
-                  height={66}
-                  className="rounded-full object-cover"
-                />
+                {experience.date}
+              </motion.span>
+            </TimelineOppositeContent>
+
+            <TimelineSeparator>
+              <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
+
+              <TimelineDot
+                sx={{
+                  p: 0,
+                  width: 70,
+                  height: 70,
+                  backgroundColor: 'transparent',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                }}
+              >
+                <motion.div
+                  initial={{ scale: 0 }}
+                  whileInView={{ scale: 1 }}
+                  transition={{ duration: 0.3, ease: 'easeOut' }}
+                >
+                  <Image
+                    src={experience.image}
+                    alt={experience.company}
+                    width={66}
+                    height={66}
+                    className="rounded-full object-cover"
+                  />
+                </motion.div>
+              </TimelineDot>
+
+              <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
+            </TimelineSeparator>
+
+            <TimelineContent sx={{ py: 2, px: 2 }}>
+              <motion.div
+                initial={{ opacity: 0, x: 20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.3, delay: 0.2 }}
+              >
+                <Typography sx={{ fontWeight: 'bold' }}>
+                  {experience.company}
+                </Typography>
+                <Typography sx={{ fontSize: '15px', color: 'gray' }}>
+                  {experience.role}
+                </Typography>
+                <Typography sx={{ mt: 1, maxWidth: '400px' }}>
+                  {experience.description}
+                </Typography>
               </motion.div>
-            </TimelineDot>
-
-            <TimelineConnector sx={{ flexGrow: 1, minHeight: '2rem' }} />
-          </TimelineSeparator>
-
-          <TimelineContent sx={{ py: 2, px: 2 }}>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.3, delay: 0.2 }}
-            >
-              <Typography sx={{ fontWeight: 'bold' }}>
-                SCRT (SUTD Competitive Robotics Team)
-              </Typography>
-              <Typography sx={{ fontSize: '15px', color: 'gray' }}>
-                Software Team Lead
-              </Typography>
-              <Typography sx={{ mt: 1, maxWidth: '400px' }}>
-                Created a custom C++ library incorporating PID control, odometry,
-                and VEX libraries, enhancing the functionality and versatility of
-                our club robots.
-              </Typography>
-            </motion.div>
-          </TimelineContent>
-        </TimelineItem>
+            </TimelineContent>
+          </TimelineItem>
+        ))}
       </Timeline>
     </section>
   );
