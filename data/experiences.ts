@@ -16,7 +16,7 @@ export const experiences: Experience[] = [
   },
   {
     company: "Pick Network, subsidiary of IMDA",
-    role: "Full-stack Software Engineer",
+    role: "Full-stack Software Engineer Intern",
     description: "Built a full-stack internal operations portal with real-time monitoring, microservices, and geospatial features to manage a nationwide network of 1000+ smart parcel lockers.",
     image: "/pick.png",
     date: "Sep 2025 - Dec 2025"
