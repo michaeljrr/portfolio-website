@@ -15,7 +15,7 @@ import experiences, { type Experience } from '@/data/experiences';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-16 px-4 bg-gray-50">
+    <section id="experience" className="py-16 px-4 bg-white">
       <h2 className="text-2xl font-semibold mb-4 text-black text-center">
         My Experience
       </h2>

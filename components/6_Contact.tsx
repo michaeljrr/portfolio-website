@@ -7,7 +7,7 @@ import { FaGithub, FaLinkedin, } from 'react-icons/fa';
 
 export default function Contact(){
     return(
-        <section id='contact' className="flex-col py-16 px-4 bg-gray-50">
+        <section id='contact' className="flex-col py-16 px-4 bg-white">
             <h2 className="text-2xl font-semibold mb-4 text-black center text-center">
                 Contact Me
             </h2>

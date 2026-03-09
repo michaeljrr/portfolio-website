@@ -28,6 +28,7 @@ export default function Header() {
         <nav className="hidden md:flex gap-8">
           <Link href="#home" className="hover:underline">Home</Link>
           <Link href="#about" className="hover:underline">About</Link>
+          <Link href="#certifications" className="hover:underline">Certifications</Link>
           <Link href="#experience" className="hover:underline">Experience</Link>
           <Link href="#projects" className="hover:underline">Projects</Link>
           <Link href="#contact" className="hover:underline">Contact</Link>
@@ -50,6 +51,7 @@ export default function Header() {
         <nav className="flex flex-col gap-4 bg-white/90 backdrop-blur-md px-4 pb-4 md:hidden">
           <Link href="#home" className="hover:underline" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="#about" className="hover:underline" onClick={() => setIsOpen(false)}>About</Link>
+          <Link href="#certifications" className="hover:underline" onClick={() => setIsOpen(false)}>Certifications</Link>
           <Link href="#experience" className="hover:underline" onClick={() => setIsOpen(false)}>Experience</Link>
           <Link href="#projects" className="hover:underline" onClick={() => setIsOpen(false)}>Projects</Link>
           <Link href="#contact" className="hover:underline" onClick={() => setIsOpen(false)}>Contact</Link>
