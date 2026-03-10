@@ -4,21 +4,10 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { FaGithub, FaLinkedin, } from 'react-icons/fa';
 import { CiMail } from "react-icons/ci";
-import { TypingEffect } from "@/animations/typing";
-import { useState } from 'react';
+import { ColoredTypingEffect } from "@/animations/typing";
 import { motion } from 'framer-motion';
 
 export default function HomePage() {
-  const [showCursor, setShowCursor] = useState(true);
-
-  const [showSecond, setShowSecond] = useState(false);
-  const [showSecondCursor, setShowSecondCursor] = useState(true);
-
-  const [showThird, setShowThird] = useState(false);
-  const [showThirdCursor, setShowThirdCursor] = useState(true);
-
-  const [showFourth, setShowFourth] = useState(false);
-
   return (
     <section id="home" className="pt-20 p-8 min-h-screen relative flex flex-col justify-center">
         {/* Background Image Container with fixed aspect ratio */}
@@ -53,52 +42,17 @@ export default function HomePage() {
           </div>
           </motion.div>
 
-          <p className="text-2xl font-semibold mb-8 text-center px-4 max-w-3xl mt-3 ">
-            <TypingEffect
-              text="Hello! I'm Michael, a Computer Science undergraduate with a passion for "
+          <p className="text-2xl font-semibold mb-8 text-center px-4 max-w-3xl mt-3">
+            <ColoredTypingEffect
+              segments={[
+                { text: "Hello! I'm Michael, a Computer Science undergraduate with a passion for ", className: "text-black" },
+                { text: "full-stack development", className: "text-blue-800" },
+                { text: " and ", className: "text-black" },
+                { text: "cybersecurity.", className: "text-blue-800" }
+              ]}
               speed={10}
-              className="text-black"
-              showCursor={showCursor}
               cursorClassName="text-blue-500"
-              onComplete={() => {setShowCursor(false); setShowSecond(true)}}
             />
-
-            {showSecond && (
-              <TypingEffect
-                text="full-stack development "
-                speed={10}
-                delay={0}
-                className="text-blue-800"
-                cursorClassName="text-blue-500"
-                showCursor={showSecondCursor}
-                onComplete={() => {setShowSecondCursor(false); setShowThird(true)}}
-              />
-            )}
-
-            {showThird && (
-              <TypingEffect
-                text="and "
-                speed={10}
-                delay={0}
-                className="text-black"
-                cursorClassName="text-blue-500"
-                showCursor={showThirdCursor}
-                onComplete={() => {setShowThirdCursor(false); setShowFourth(true)}}
-              />
-            )}
-
-            {showFourth && (
-              <TypingEffect
-                text="cybersecurity."
-                speed={10}
-                delay={0}
-                className="text-blue-800"
-                cursorClassName="text-blue-500"
-              />
-            )}
-
-
-
           </p>
 
           {/*

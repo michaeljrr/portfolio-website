@@ -22,14 +22,12 @@ export const TypingEffect = ({
   showCursor = true,
   onComplete
 }: TypingEffectProps) => {
-  const [displayedText, setDisplayedText] = useState('');
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isComplete, setIsComplete] = useState(false);
 
   useEffect(() => {
     if (currentIndex < text.length) {
       const timeout = setTimeout(() => {
-        setDisplayedText(text.slice(0, currentIndex + 1));
         setCurrentIndex(currentIndex + 1);
       }, currentIndex === 0 ? delay : speed);
 
@@ -40,22 +38,103 @@ export const TypingEffect = ({
     }
   }, [currentIndex, text, speed, delay, isComplete, onComplete]);
 
+  const chars = text.split('');
+
   return (
     <span className={`inline ${className}`}>
-      {displayedText}
-      {showCursor && (
-        <motion.span
-          className={`inline ml-1 ${cursorClassName}`}
-          animate={{ opacity: [1, 0] }}
-          transition={{
-            duration: 0.5,
-            repeat: Infinity,
-            repeatType: 'reverse',
-          }}
-        >
-          |
-        </motion.span>
-      )}
+      {chars.map((char, index) => (
+        <span key={index}>
+          <span
+            style={{
+              visibility: index < currentIndex ? 'visible' : 'hidden'
+            }}
+          >
+            {char}
+          </span>
+          {showCursor && index === currentIndex - 1 && (
+            <motion.span
+              className={`inline ml-1 ${cursorClassName}`}
+              animate={{ opacity: [1, 0] }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
+            >
+              |
+            </motion.span>
+          )}
+        </span>
+      ))}
+    </span>
+  );
+};
+
+// Colored segments typing effect
+export interface TextSegment {
+  text: string;
+  className: string;
+}
+
+interface ColoredTypingEffectProps {
+  segments: TextSegment[];
+  speed?: number;
+  delay?: number;
+  cursorClassName?: string;
+}
+
+export const ColoredTypingEffect = ({
+  segments,
+  speed = 50,
+  delay = 0,
+  cursorClassName = '',
+}: ColoredTypingEffectProps) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  
+  // Flatten all segments into a single array with color info
+  const allChars: { char: string; className: string }[] = [];
+  segments.forEach(segment => {
+    segment.text.split('').forEach(char => {
+      allChars.push({ char, className: segment.className });
+    });
+  });
+
+  useEffect(() => {
+    if (currentIndex < allChars.length) {
+      const timeout = setTimeout(() => {
+        setCurrentIndex(currentIndex + 1);
+      }, currentIndex === 0 ? delay : speed);
+
+      return () => clearTimeout(timeout);
+    }
+  }, [currentIndex, allChars.length, speed, delay]);
+
+  return (
+    <span className="inline">
+      {allChars.map((item, index) => (
+        <span key={index} className={item.className}>
+          <span
+            style={{
+              visibility: index < currentIndex ? 'visible' : 'hidden'
+            }}
+          >
+            {item.char}
+          </span>
+          {index === currentIndex - 1 && (
+            <motion.span
+              className={`inline ml-1 ${cursorClassName}`}
+              animate={{ opacity: [1, 0] }}
+              transition={{
+                duration: 0.5,
+                repeat: Infinity,
+                repeatType: 'reverse',
+              }}
+            >
+              |
+            </motion.span>
+          )}
+        </span>
+      ))}
     </span>
   );
 };
