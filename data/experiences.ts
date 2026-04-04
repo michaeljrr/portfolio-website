@@ -20,6 +20,13 @@ export const experiences: Experience[] = [
     description: "Built a full-stack internal operations portal with real-time monitoring, microservices, and geospatial features to manage a nationwide network of 1000+ smart parcel lockers.",
     image: "/pick.png",
     date: "Sep 2025 - Dec 2025"
+  },
+    {
+    company: "W Labs",
+    role: "Software Engineer Intern",
+    description: "Developing a client-facing dashboard for event management, planning, and analytics.",
+    image: "/wlabs.png",
+    date: "Mar 2026 - Present"
   }
 ];
 

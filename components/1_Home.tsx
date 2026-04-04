@@ -47,7 +47,9 @@ export default function HomePage() {
               segments={[
                 { text: "Hello! I'm Michael, a Computer Science undergraduate with a passion for ", className: "text-black" },
                 { text: "full-stack development", className: "text-blue-800" },
-                { text: " and ", className: "text-black" },
+                { text: ", ", className: "text-black" },
+                { text: "cloud", className: "text-blue-800" },
+                { text: ", and ", className: "text-black" },
                 { text: "cybersecurity.", className: "text-blue-800" }
               ]}
               speed={10}

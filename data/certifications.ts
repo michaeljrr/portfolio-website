@@ -23,6 +23,16 @@ export const certifications: Certification[] = [
   {
     name: "AWS Certified Cloud Practitioner",
     issuer: "Amazon Web Services",
+    credentialId: "8419ce7a6e0245229078348e4367ae25",
+    issuedDate: "April 2026",
+    logo: "/aws.png",
+    logoWidth: 80,
+    logoHeight: 128,
+    inProgress: false,
+  },
+  {
+    name: "AWS Certified Solutions Architect - Associate",
+    issuer: "Amazon Web Services",
     logo: "/aws.png",
     logoWidth: 80,
     logoHeight: 128,

@@ -10,14 +10,14 @@ export default function Certifications(){
             <h2 className="text-2xl font-semibold mb-4 text-black text-center">
                 My Certifications
             </h2>
-            <div className="flex flex-wrap justify-center gap-8 mt-12 max-w-5xl mx-auto">
+            <div className="flex flex-wrap lg:flex-nowrap justify-center gap-8 mt-12 max-w-7xl mx-auto">
                 {certifications.map((cert: Certification, index: number) => (
                     <motion.div
                         key={index}
                         initial={{ opacity: 0, y: 50 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: index * 0.2 }}
-                        className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center max-w-sm w-full relative"
+                        className="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center max-w-sm w-full lg:flex-1 relative"
                     >
                         <div className="mb-4 relative" style={{ width: `${cert.logoWidth || 128}px`, height: `${cert.logoHeight || 128}px` }}>
                             <Image
