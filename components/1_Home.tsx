@@ -42,7 +42,7 @@ export default function HomePage() {
           </div>
           </motion.div>
 
-          <p className="text-2xl font-semibold mb-8 text-center px-4 max-w-3xl mt-3">
+          <p className="text-2xl font-semibold mb-8 text-left w-full max-w-3xl mx-auto mt-3 px-7">
             <ColoredTypingEffect
               segments={[
                 { text: "Hello! I'm Michael, a Computer Science undergraduate with a passion for ", className: "text-black" },
